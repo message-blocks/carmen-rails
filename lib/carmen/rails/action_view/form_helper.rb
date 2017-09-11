@@ -89,7 +89,7 @@ module ActionView
 
           priority_regions = priority_region_codes.map do |code|
             region = regions.coded(code)
-            [region.name, region.code] if region
+            [region.name, region.name] if region
           end.compact
           unless priority_regions.empty?
             region_options += options_for_select(priority_regions, selected)
