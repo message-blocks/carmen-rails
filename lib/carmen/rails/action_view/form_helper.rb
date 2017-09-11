@@ -102,7 +102,7 @@ module ActionView
           end
         end
 
-        main_options = regions.map { |r| [r.name, r.code] }
+        main_options = regions.map { |r| [r.name, r.name] }
         main_options.sort!{|a, b| a.first.to_s <=> b.first.to_s}
         main_options.unshift [options['prompt'], ''] if options['prompt']
 
@@ -221,7 +221,7 @@ module ActionView
         end
       end
     end
-    
+
     if Rails::VERSION::MAJOR == 5
       module Tags
         class Base
