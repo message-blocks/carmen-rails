@@ -220,7 +220,8 @@ module ActionView
           end
         end
       end
-
+    end
+    
     if Rails::VERSION::MAJOR == 5
       module Tags
         class Base
@@ -243,8 +244,7 @@ module ActionView
             end
           end
         end
-      end
-      
+      end  
     end
 
     class FormBuilder
