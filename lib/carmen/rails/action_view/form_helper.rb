@@ -95,6 +95,7 @@ module ActionView
               else
                 [region.name, region.code]
               end
+            end
           end.compact
           unless priority_regions.empty?
             region_options += options_for_select(priority_regions, selected)
