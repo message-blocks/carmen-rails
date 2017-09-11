@@ -108,10 +108,13 @@ module ActionView
           end
         end
 
-        main_options = regions.map { |r| [r.name, r.name] }
-        if regions.type != 'country'
-          main_options = [region.name, region.code]
-        end
+        main_options = regions.map { |r| 
+          if (r.type == 'country')
+            [r.name, r.name] 
+          else
+            [r.name, r.code]
+          end
+        }
         main_options.sort!{|a, b| a.first.to_s <=> b.first.to_s}
         main_options.unshift [options['prompt'], ''] if options['prompt']
 
